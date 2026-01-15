@@ -1,0 +1,19 @@
+{
+  "name": "@stack-auth/landing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "vite build",
+    "preview": "vite preview --port 3000",
+    "lint": "echo 'landing: skip lint'",
+    "format": "echo 'landing: skip format'"
+  },
+  "dependencies": {
+    "@stack-auth/ui-tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0"
+  }
+}

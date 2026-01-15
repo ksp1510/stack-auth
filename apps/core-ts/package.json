@@ -1,0 +1,20 @@
+{
+  "name": "@stack-auth/core-ts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --port 5173",
+    "lint": "echo 'core-ts: skip lint'",
+    "format": "echo 'core-ts: skip format'"
+  },
+  "dependencies": {
+    "@stack-auth/auth-spa": "workspace:*",
+    "@stack-auth/ui-tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0"
+  }
+}

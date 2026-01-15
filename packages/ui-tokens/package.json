@@ -1,0 +1,13 @@
+{
+  "name": "@stack-auth/ui-tokens",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "files": ["src"],
+  "scripts": {
+    "build": "echo 'ui-tokens: no build'",
+    "dev": "echo 'ui-tokens: no dev server'",
+    "lint": "echo 'ui-tokens: skip lint'",
+    "format": "echo 'ui-tokens: skip format'"
+  }
+}
