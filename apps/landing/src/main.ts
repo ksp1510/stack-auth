@@ -21,6 +21,12 @@ const stacks: StackLink[] = [
     badge: "Reference"
   },
   {
+    title: "Core (HTML + Sass + JS)",
+    description: "Vanilla JavaScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5176/",
+    badge: "Reference"
+  },
+  {
     title: "React (TS)",
     description: "React + TypeScript + Vite. Same auth wrapper.",
     url: "http://localhost:5174/",

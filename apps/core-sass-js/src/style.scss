@@ -1,0 +1,183 @@
+:root {
+  color-scheme: dark;
+  --bg: #070a12;
+  --card: rgba(17, 24, 39, .7);
+  --card2: rgba(255, 255, 255, .05);
+  --border: rgba(255,255,255,.10);
+  --border2: rgba(255,255,255,.14);
+  --text: #e5e7eb;
+  --muted: rgba(229,231,235,.78);
+  --link: #93c5fd;
+  --radius: 16px;
+  --radius-sm: 12px;
+  --shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(99,102,241,.35), transparent 60%),
+    radial-gradient(900px 500px at 85% 25%, rgba(16,185,129,.28), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+a { color: inherit; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+.card {
+  width: min(520px, 92vw);
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+
+  &.wide { width: min(720px, 92vw); }
+}
+
+.head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.title { font-size: 22px; font-weight: 800; }
+.sub { opacity: .8; margin-top: 6px; font-size: 13px; }
+.h1 { font-size: 20px; font-weight: 800; }
+.small { font-size: 12px; opacity: .75; line-height: 1.4; }
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn {
+  border: 1px solid var(--border2);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+
+  &:hover { background: rgba(255,255,255,.10); }
+
+  &.primary {
+    border-color: rgba(99,102,241,.5);
+    background: rgba(99,102,241,.18);
+
+    &:hover { background: rgba(99,102,241,.28); }
+  }
+
+  &.google { width: 100%; margin-top: 10px; }
+}
+
+.ghost {
+  border: 1px solid var(--border2);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;
+
+  &:hover { background: rgba(255,255,255,.10); }
+}
+
+.divider {
+  display: grid;
+  place-items: center;
+  margin: 14px 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    height: 1px;
+    background: rgba(255,255,255,.10);
+  }
+
+  span {
+    position: relative;
+    padding: 0 10px;
+    background: rgba(17, 24, 39, .9);
+    font-size: 12px;
+    opacity: .8;
+  }
+}
+
+.status {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid rgba(16,185,129,.35);
+  background: rgba(16,185,129,.08);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.warn {
+  border: 1px solid rgba(245,158,11,.35);
+  background: rgba(245,158,11,.08);
+}
+
+.err {
+  border: 1px solid rgba(239,68,68,.35);
+  background: rgba(239,68,68,.10);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.box {
+  border: 1px solid var(--border);
+  background: var(--card2);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.k { font-size: 12px; opacity: .75; }
+.v { margin-top: 6px; font-size: 14px; font-weight: 800; }
+
+.panel {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  background: var(--card2);
+  border-radius: 14px;
+  padding: 12px;
+
+  pre {
+    margin: 8px 0 0;
+    font-size: 12px;
+    overflow: auto;
+    max-height: 280px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+.link { color: var(--link); font-weight: 700; text-decoration: none; }
+.link:hover { text-decoration: underline; }

@@ -1,0 +1,17 @@
+{
+  "name": "@stack-auth/core-sass-js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5176",
+    "build": "vite build",
+    "preview": "vite preview --port 5176"
+  },
+  "dependencies": {
+    "@stack-auth/auth-spa": "workspace:*"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0",
+    "vite": "^5.4.0"
+  }
+}
