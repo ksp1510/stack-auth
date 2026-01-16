@@ -9,6 +9,12 @@ type StackLink = {
 
 const stacks: StackLink[] = [
   {
+    title: "Core (HTML + JS)",
+    description: "Vanilla JavaScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5175/",
+    badge: "Reference"
+  },
+  {
     title: "Core (HTML + TS)",
     description: "Vanilla TypeScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5173/",
@@ -22,9 +28,9 @@ const stacks: StackLink[] = [
   },
   {
     title: "Angular",
-    description: "Coming next: Angular + TS.",
-    url: "#",
-    badge: "TODO"
+    description: "Angular + TypeScript · Auth0 Universal Login",
+    url: "http://localhost:4200/",
+    badge: "Reference"
   },
   {
     title: "Vue",

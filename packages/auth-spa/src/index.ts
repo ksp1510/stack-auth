@@ -1,4 +1,5 @@
-import createAuth0Client, {
+import {
+  createAuth0Client,
   type Auth0Client,
   type Auth0ClientOptions,
   type RedirectLoginOptions
@@ -46,27 +47,29 @@ export class AuthService {
   }
 
   login(options?: Omit<RedirectLoginOptions, "authorizationParams">): Promise<void> {
-    const client = this.mustClient();
-    return client.loginWithRedirect({
-      ...options,
-      authorizationParams: {
-        redirect_uri: this.config.redirectUri,
-        ...(this.config.audience ? { audience: this.config.audience } : {})
-      }
-    });
-  }
+  const client = this.mustClient();
+  return client.loginWithRedirect({
+    ...options,
+    authorizationParams: {
+      ...(options as any)?.authorizationParams,
+      redirect_uri: this.config.redirectUri,
+      ...(this.config.audience ? { audience: this.config.audience } : {})
+    }
+  } as any);
+}
 
   signup(options?: Omit<RedirectLoginOptions, "authorizationParams">): Promise<void> {
-    const client = this.mustClient();
-    return client.loginWithRedirect({
-      ...options,
-      authorizationParams: {
-        redirect_uri: this.config.redirectUri,
-        screen_hint: "signup",
-        ...(this.config.audience ? { audience: this.config.audience } : {})
-      }
-    });
-  }
+  const client = this.mustClient();
+  return client.loginWithRedirect({
+    ...options,
+    authorizationParams: {
+      ...(options as any)?.authorizationParams,
+      redirect_uri: this.config.redirectUri,
+      screen_hint: "signup",
+      ...(this.config.audience ? { audience: this.config.audience } : {})
+    }
+  } as any);
+}
 
   async handleRedirectCallback(): Promise<void> {
     const client = this.mustClient();

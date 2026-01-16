@@ -1,0 +1,174 @@
+:root{
+  color-scheme: dark;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+/* App shell: matches Angular AppComponent .app */
+html, body { height: 100%; }
+body{
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(99,102,241,.35), transparent 60%),
+    radial-gradient(900px 500px at 85% 25%, rgba(16,185,129,.28), transparent 55%),
+    #070a12;
+  color: #e5e7eb;
+}
+
+#app{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Card */
+.card{
+  background: rgba(17, 24, 39, .7);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  backdrop-filter: blur(10px);
+}
+
+/* Sizes (use these on each page) */
+.card.sm { width: min(520px, 92vw); }
+.card.md { width: min(720px, 92vw); }
+
+/* Header */
+.head{ margin-bottom: 16px; }
+.headRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.title{ font-size: 22px; font-weight: 700; }
+.title.h1{ font-size: 20px; font-weight: 800; }
+.sub{ opacity: .8; margin-top: 6px; font-size: 13px; }
+
+/* Buttons */
+.btn{
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: #e5e7eb;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn:hover{ background: rgba(255,255,255,.10); }
+
+.btn.primary{
+  border-color: rgba(99,102,241,.5);
+  background: rgba(99,102,241,.18);
+}
+.btn.primary:hover{ background: rgba(99,102,241,.28); }
+
+.btn.google{ width: 100%; margin-top: 10px; }
+
+/* Actions grid */
+.actions{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Divider */
+.divider{
+  display: grid;
+  place-items: center;
+  margin: 14px 0;
+  position: relative;
+}
+.divider::before{
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: rgba(255,255,255,.10);
+}
+.divider span{
+  position: relative;
+  padding: 0 10px;
+  background: rgba(17, 24, 39, .9);
+  font-size: 12px;
+  opacity: .8;
+}
+
+/* Hint text */
+.hint{
+  margin-top: 12px;
+  font-size: 12px;
+  opacity: .75;
+  line-height: 1.4;
+}
+
+/* Status */
+.status{
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid rgba(16,185,129,.35);
+  background: rgba(16,185,129,.08);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+}
+
+/* Home grid */
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.box{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  border-radius: 14px;
+  padding: 12px;
+}
+.k{ font-size: 12px; opacity: .75; }
+.v{ margin-top: 6px; font-size: 14px; font-weight: 800; }
+
+/* JSON panel */
+.json{
+  margin-top: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  border-radius: 14px;
+  padding: 12px;
+}
+pre{
+  margin: 8px 0 0;
+  font-size: 12px;
+  overflow: auto;
+  max-height: 280px;
+}
+
+/* Links */
+.a, .link{
+  display: inline-block;
+  margin-top: 12px;
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 700;
+}
+.a:hover, .link:hover{ text-decoration: underline; }
+
+/* Error panels (callback/error style) */
+.err{
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(239,68,68,.35);
+  background: rgba(239,68,68,.10);
+  border-radius: 12px;
+  font-size: 13px;
+}

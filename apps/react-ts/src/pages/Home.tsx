@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { auth, logoutUri } from "../auth";
 
@@ -6,70 +6,77 @@ type User = {
   name?: string;
   email?: string;
   picture?: string;
+  [key: string]: unknown;
 };
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [authed, setAuthed] = useState(false);
   const [user, setUser] = useState<User | null>(null);
-  const [tokenPreview, setTokenPreview] = useState("");
+
+  const name = useMemo(() => user?.name || user?.email || "", [user]);
 
   useEffect(() => {
     (async () => {
-      const isAuthed = await auth.isAuthenticated();
-      setAuthed(isAuthed);
-      if (isAuthed) {
-        const u = (await auth.getUser()) as User | undefined;
-        setUser(u ?? null);
-        try {
-          const token = await auth.getAccessToken();
-          setTokenPreview((token ?? "").slice(0, 80));
-        } catch {
-          setTokenPreview("(No access token - add an API audience later if you need one)");
+      try {
+        const isAuthed = await auth.isAuthenticated();
+        setAuthed(isAuthed);
+
+        if (isAuthed) {
+          const u = (await auth.getUser()) as User | undefined;
+          setUser(u ?? null);
+        } else {
+          setUser(null);
         }
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     })();
   }, []);
 
-  if (loading) return <div className="small">Loading...</div>;
+  if (loading) return <div className="sub">Loading…</div>;
 
   if (!authed) {
     return (
       <div>
-        <h2 style={{ margin: "0 0 10px 0" }}>Not logged in</h2>
-        <div className="small" style={{ marginBottom: 14 }}>You need to login first.</div>
-        <Link className="btn primary" to="/">Go to Login</Link>
+        <div className="title h1">Not logged in</div>
+        <div className="sub">You need to login first.</div>
+        <div style={{ marginTop: 12 }}>
+          <Link className="btn primary" to="/">Go to Login</Link>
+        </div>
       </div>
     );
   }
 
   return (
     <div>
-      <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
-        <img
-          src={user?.picture ?? ""}
-          alt=""
-          style={{ width: 52, height: 52, borderRadius: 999, border: "1px solid var(--border)", objectFit: "cover" }}
-        />
+      <header className="headRow">
         <div>
-          <div style={{ fontWeight: 800 }}>{user?.name ?? "User"}</div>
-          <div className="small">{user?.email ?? ""}</div>
+          <div className="title h1">Home</div>
+          <div className="sub">React (TS) · Authenticated area</div>
+        </div>
+        <button className="btn" type="button" onClick={() => auth.logout(logoutUri)}>
+          Logout
+        </button>
+      </header>
+
+      <div className="grid">
+        <div className="box">
+          <div className="k">Authenticated</div>
+          <div className="v">Yes</div>
+        </div>
+        <div className="box">
+          <div className="k">User</div>
+          <div className="v">{name || "—"}</div>
         </div>
       </div>
 
-      <hr style={{ margin: "16px 0", border: "none", borderTop: "1px solid var(--border)" }} />
-
-      <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-        <button className="btn" onClick={() => auth.logout(logoutUri)}>Logout</button>
+      <div className="json">
+        <div className="k">Profile JSON</div>
+        <pre>{JSON.stringify(user ?? {}, null, 2)}</pre>
       </div>
 
-      <div className="small" style={{ marginTop: 16 }}>Access token preview (first 80 chars):</div>
-      <pre
-        style={{ whiteSpace: "pre-wrap", wordBreak: "break-word", background: "rgba(0,0,0,0.22)", padding: 12, border: "1px solid var(--border)", borderRadius: "var(--radius-sm)", marginTop: 8 }}
-      >
-        {tokenPreview}...
-      </pre>
+      <a className="a" href="http://localhost:3000/">Back to landing</a>
     </div>
   );
 }

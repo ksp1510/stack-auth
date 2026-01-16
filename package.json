@@ -11,5 +11,8 @@
     "build": "pnpm -r --filter './apps/*' build",
     "lint": "pnpm -r lint",
     "format": "pnpm -r format"
+  },
+  "devDependencies": {
+    "@angular/cli": "^21.1.0"
   }
 }
