@@ -1,10 +1,10 @@
 {
-  "name": "angular-ts",
+  "name": "angular-js",
   "version": "0.0.0",
   "scripts": {
-    "dev": "ng serve --port 5178",
+    "dev": "ng serve --port 5179",
     "ng": "ng",
-    "start": "ng serve --port 5178",
+    "start": "ng serve --port 5179",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

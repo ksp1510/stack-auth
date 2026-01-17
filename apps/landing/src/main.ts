@@ -28,20 +28,97 @@ const stacks: StackLink[] = [
   },
   {
     title: "React (TS)",
-    description: "React + TypeScript + Vite. Same auth wrapper.",
+    description: "React + TypeScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5174/",
     badge: "Reference"
   },
   {
-    title: "Angular",
-    description: "Angular + TypeScript · Auth0 Universal Login",
-    url: "http://localhost:4200/",
+    title: "React (JS)",
+    description: "React + JavaScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5177/",
     badge: "Reference"
   },
   {
-    title: "Vue",
-    description: "Coming next: Vue + TS.",
-    url: "#",
+    title: "Angular (TS)",
+    description: "Angular + TypeScript + Vite.Auth0 Universal Login",
+    url: "http://localhost:5178/",
+    badge: "Reference"
+  },
+  {
+    title: "Angular (JS)",
+    description: "Angular + JavaScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5179/",
+    badge: "TODO"
+  },
+  {
+    title: "Vue (JS)",
+    description: "Vue + JavaScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5180/",
+    badge: "TODO"
+  },
+  {
+    title: "Vue (TS)",
+    description: "Vue + TypeScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5181/",
+    badge: "TODO"
+  },
+  {
+    title: "Svelte (JS)",
+    description: "Svelte + JavaScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5182/",
+    badge: "TODO"
+  },
+  {
+    title: "Svelte (TS)",
+    description: "Svelte + TypeScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5183/",
+    badge: "TODO"
+  },
+  {
+    title: "SolidJS (JS)",
+    description: "SolidJS + JavaScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5184/",
+    badge: "TODO"
+  },
+  {
+    title: "SolidJS (TS)",
+    description: "SolidJS + TypeScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5185/",
+    badge: "TODO"
+  },
+  {
+    title: "Astro (JS)",
+    description: "Astro + JavaScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5186/",
+    badge: "TODO"
+  },
+  {
+    title: "Astro (TS)",
+    description: "Astro + TypeScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5187/",
+    badge: "TODO"
+  },
+  {
+    title: "Qwik (JS)",
+    description: "Qwik + JavaScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5188/",
+    badge: "TODO"
+  },
+  {
+    title: "Qwik (TS)",
+    description: "Qwik + TypeScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5189/",
+    badge: "TODO"
+  },
+  {
+    title: "jQuery (JS)",
+    description: "jQuery + JavaScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5190/",
+    badge: "TODO"
+  },
+  { title: "jQuery (TS)",
+    description: "jQuery + TypeScript + Vite. Auth0 Universal Login.",
+    url: "http://localhost:5191/",
     badge: "TODO"
   }
 ];
@@ -80,7 +157,7 @@ app.innerHTML = `
     <div class="card" style="margin-top:16px;padding:16px;">
       <div style="font-weight:700;">Ports used by this repo</div>
       <div class="small" style="margin-top:8px;line-height:1.6;">
-        Landing: 3000 · Core TS: 5173 · React TS: 5174
+        Landing: 3000 · Core TS: 5173 · Core JS: 5175 · Core Sass + JS: 5176 · React TS: 5174 · React JS: 5177 · Angular TS: 5178 · Angular JS: 5179 · Vue TS: 5180 · Vue JS: 5181 · Svelte TS: 5182 · Svelte JS: 5183 · SolidJS TS: 5184 · SolidJS JS: 5185 · Astro TS: 5186 · Astro JS: 5187 · Qwik TS: 5188 · Qwik JS: 5189 · jQuery TS: 5190 · jQuery JS: 5191
       </div>
     </div>
   </div>

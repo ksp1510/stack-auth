@@ -3,7 +3,8 @@ export const environment = {
   auth0: {
     domain: "dev-z14lzhpmcliyx5bx.us.auth0.com",
     clientId: "3EWvi7nDCPejAIbyrxAPGWyDiB2ghDyd",
-    redirectUri: "http://localhost:4200/callback",
+    redirectUri: "http://localhost:5178/callback",
+    logoutUri: "http://localhost:5178/",
     audience: ""
   }
 };

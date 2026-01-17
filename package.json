@@ -14,5 +14,10 @@
   },
   "devDependencies": {
     "@angular/cli": "^21.1.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "lucide-react": "0.562.0"
+    }
   }
 }
