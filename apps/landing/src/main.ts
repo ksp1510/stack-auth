@@ -40,7 +40,7 @@ const stacks: StackLink[] = [
   },
   {
     title: "Angular (TS)",
-    description: "Angular + TypeScript + Vite.Auth0 Universal Login",
+    description: "Angular + TypeScript + Vite. Auth0 Universal Login",
     url: "http://localhost:5178/",
     badge: "Reference"
   },
@@ -48,19 +48,19 @@ const stacks: StackLink[] = [
     title: "Angular (JS)",
     description: "Angular + JavaScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5179/",
-    badge: "TODO"
+    badge: "Reference"
   },
   {
     title: "Vue (JS)",
     description: "Vue + JavaScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5180/",
-    badge: "TODO"
+    badge: "Reference"
   },
   {
     title: "Vue (TS)",
     description: "Vue + TypeScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5181/",
-    badge: "TODO"
+    badge: "Reference"
   },
   {
     title: "Svelte (JS)",
