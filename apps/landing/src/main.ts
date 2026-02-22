@@ -78,13 +78,13 @@ const stacks: StackLink[] = [
     title: "SolidJS (JS)",
     description: "SolidJS + JavaScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5184/",
-    badge: "TODO"
+    badge: "Reference"
   },
   {
     title: "SolidJS (TS)",
     description: "SolidJS + TypeScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5185/",
-    badge: "TODO"
+    badge: "Reference"
   },
   {
     title: "Astro (JS)",

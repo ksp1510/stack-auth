@@ -1,0 +1,21 @@
+{
+  "name": "solid-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5185",
+    "build": "vite build",
+    "preview": "vite preview --port 5185",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@stack-auth/auth-spa": "workspace:^",
+    "solid-js": "^1.8.22"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0",
+    "vite-plugin-solid": "^2.10.2",
+    "typescript": "~5.5.4"
+  }
+}
