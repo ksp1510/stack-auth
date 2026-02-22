@@ -66,13 +66,13 @@ const stacks: StackLink[] = [
     title: "Svelte (JS)",
     description: "Svelte + JavaScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5182/",
-    badge: "TODO"
+    badge: "Reference"
   },
   {
     title: "Svelte (TS)",
     description: "Svelte + TypeScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5183/",
-    badge: "TODO"
+    badge: "Reference"
   },
   {
     title: "SolidJS (JS)",
