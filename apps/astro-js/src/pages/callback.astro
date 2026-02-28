@@ -1,0 +1,24 @@
+---
+// apps/astro-js/src/pages/callback.astro
+import "../styles.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Callback · Astro (JS)</title>
+  </head>
+
+  <body>
+    <main class="app">
+      <section class="card">
+        <div class="title">Signing you in…</div>
+        <div class="sub">Handling Auth0 callback</div>
+        <div class="small">If you see this, reload once. (Main intercepts normally.)</div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/client/callback.js"></script>
+  </body>
+</html>

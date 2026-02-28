@@ -90,13 +90,13 @@ const stacks: StackLink[] = [
     title: "Astro (JS)",
     description: "Astro + JavaScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5186/",
-    badge: "TODO"
+    badge: "Reference"
   },
   {
     title: "Astro (TS)",
     description: "Astro + TypeScript + Vite. Auth0 Universal Login.",
     url: "http://localhost:5187/",
-    badge: "TODO"
+    badge: "Reference"
   },
   {
     title: "Qwik (JS)",

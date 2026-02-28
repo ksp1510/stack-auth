@@ -1,0 +1,19 @@
+{
+  "name": "astro-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --port 5187",
+    "build": "astro build",
+    "preview": "astro preview --port 5187"
+  },
+  "dependencies": {
+    "@stack-auth/auth-spa": "workspace:^",
+    "astro": "^5.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^7.3.1"
+  }
+}

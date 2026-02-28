@@ -1,0 +1,48 @@
+---
+// apps/astro-js/src/pages/index.astro
+import "../styles.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Astro (JS)</title>
+  </head>
+
+  <body>
+    <main class="app">
+      <section class="card">
+        <header class="head">
+          <div>
+            <div class="title">Astro (JS)</div>
+            <div class="sub">Auth0 Universal Login · Google · No backend</div>
+          </div>
+
+          <a class="ghost" href="http://localhost:3000/">Landing</a>
+        </header>
+
+        <div class="actions">
+          <button id="login" class="btn primary" type="button">Login</button>
+          <button id="signup" class="btn" type="button">Sign up</button>
+        </div>
+
+        <div class="divider"><span>or</span></div>
+
+        <button id="google" class="btn google" type="button">
+          Continue with Google
+        </button>
+
+        <div id="noticeWrap" class="status" hidden style="margin-top:14px;">
+          <span id="notice"></span>
+        </div>
+
+        <p class="hint">
+          Email/Password happens inside Auth0 Universal Login (DB connection). Your app never sees passwords.
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="/src/client/login.js"></script>
+  </body>
+</html>

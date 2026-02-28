@@ -1,0 +1,43 @@
+---
+import "../styles.css";
+---
+
+<html>
+  <body>
+    <main class="app">
+      <section class="card">
+        <header class="head">
+          <div>
+            <div class="title">Astro (TS)</div>
+            <div class="sub">Auth0 Universal Login · Google · No backend</div>
+          </div>
+
+          <a class="ghost" href="http://localhost:3000/">Landing</a>
+        </header>
+
+        <div class="actions">
+          <button id="login" type="button" class="btn primary">Login</button>
+          <button id="logout" type="button" class="btn">Logout</button>
+        </div>
+
+        <div class="divider"><span>or</span></div>
+
+        <button class="btn google" type="button" on:click={google}>
+          Continue with Google
+        </button>
+
+        {#if notice}
+        <div class="status" style="margin-top:14px;">
+          <span>{notice}</span>
+        </div>
+      {/if}
+
+      <p class="hint">
+        Email/Password happens inside Auth0 Universal Login (DB connection). Your app never sees passwords.
+      </p>
+      </section>
+    </main>
+
+    <script type="module" src="/src/client/index.ts"></script>
+  </body>
+</html>

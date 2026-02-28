@@ -1,0 +1,15 @@
+{
+  "name": "astro-js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --port 5186",
+    "build": "astro build",
+    "preview": "astro preview --port 5186"
+  },
+  "dependencies": {
+    "@stack-auth/auth-spa": "workspace:^",
+    "astro": "^5.1.0"
+  }
+}
