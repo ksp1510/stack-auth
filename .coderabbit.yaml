@@ -1,0 +1,148 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+
+language: "en-CA"
+early_access: false
+
+reviews:
+  profile: "assertive"
+  high_level_summary: true
+  review_status: true
+  changed_files_summary: true
+  review_details: false
+  sequence_diagrams: false # usually overkill for a stack showcase repo
+  estimate_code_review_effort: true
+  related_issues: true
+  related_prs: true
+  suggested_labels: true
+  auto_apply_labels: false
+  suggested_reviewers: true
+  auto_assign_reviewers: false
+
+  auto_review:
+    enabled: true
+    drafts: false
+
+  # Focus review on source; ignore deps/build artifacts.
+  path_filters:
+    # Ignore
+    - "!**/node_modules/**"
+    - "!**/dist/**"
+    - "!**/build/**"
+    - "!**/coverage/**"
+    - "!**/.turbo/**"
+    - "!**/.vite/**"
+    - "!**/.astro/**"
+    - "!**/.svelte-kit/**"
+    - "!**/.next/**"
+    - "!**/.angular/**"
+    - "!**/*.min.*"
+    - "!**/*.map"
+    - "!**/pnpm-lock.yaml" # remove this line if you want lockfile review
+
+    # Include
+    - "apps/**"
+    - "packages/**"
+    - "docs/**"
+    - "README.md"
+    - "package.json"
+    - "pnpm-workspace.yaml"
+    - "tsconfig.base.json"
+
+  path_instructions:
+    # Shared packages (most important to get right)
+    - path: "packages/auth-spa/**"
+      instructions: >
+        This is a shared auth library used by multiple frameworks. Prioritize correctness, API stability,
+        DX, and security. Ensure types are exported cleanly, avoid framework-specific assumptions,
+        and keep surface area minimal. Check token handling, redirect/callback flows, and error states.
+
+    - path: "packages/ui-tokens/**"
+      instructions: >
+        Shared design tokens: keep naming consistent, avoid breaking changes, and ensure tokens are
+        framework-agnostic. Prefer semantic tokens over raw values.
+
+    # Apps folder is a multi-framework showcase. Review per-framework best practices.
+    - path: "apps/angular-*/**"
+      instructions: >
+        Angular apps: verify standalone/module wiring, routing, and environment usage. Avoid unsafe DOM
+        patterns (bypassSecurityTrust*, unsanitized innerHTML). Watch RxJS subscriptions/unsub, and keep
+        components thin (logic in services).
+
+    - path: "apps/react-*/**"
+      instructions: >
+        React apps: verify hooks usage (deps arrays correct), avoid state duplication, and ensure cleanup
+        for effects. Prefer stable callbacks/memo only when needed.
+
+    - path: "apps/vue-*/**"
+      instructions: >
+        Vue apps: check reactivity pitfalls (refs vs reactive), proper lifecycle cleanup, and avoid
+        side effects in computed. Ensure template bindings are safe.
+
+    - path: "apps/svelte-*/**"
+      instructions: >
+        Svelte apps: ensure reactive statements are correct, avoid leaking subscriptions, keep stores
+        clean, and ensure navigation/callback logic doesn’t cause loops.
+
+    - path: "apps/solid-*/**"
+      instructions: >
+        Solid apps: ensure signals/resources are used correctly, avoid accidental stale closures,
+        and validate cleanup where needed.
+
+    - path: "apps/astro-*/**"
+      instructions: >
+        Astro apps: ensure correct client hydration directives, avoid bundling secrets to client, and
+        keep server/client boundaries clear.
+
+    - path: "apps/landing/**"
+      instructions: >
+        Landing app: focus on SEO basics, accessibility, fast load, and no unnecessary JS.
+
+    # Docs and meta
+    - path: "docs/**"
+      instructions: >
+        Docs: ensure steps are reproducible for a fresh clone (pnpm install, env vars, run commands),
+        and keep framework-specific instructions accurate.
+
+    - path: "**/*.md"
+      instructions: >
+        Markdown: keep headings structured, code blocks correct, and avoid outdated commands/ports.
+
+    - path: "**/*.yml"
+      instructions: >
+        YAML/CI: enforce least privilege, pin action versions, and avoid plaintext secrets.
+
+pre_merge_checks:
+  title:
+    mode: "warning"
+    requirements: "Prefer: scope: summary (e.g., auth-spa: fix google callback state)."
+
+  description:
+    mode: "warning"
+
+  custom_checks:
+    - name: "No secrets in repo"
+      mode: "warning"
+      instructions: >
+        Warn if the diff includes API keys, client secrets, private keys, or tokens. Recommend .env and
+        docs with placeholders instead.
+
+    - name: "No breaking shared API changes"
+      mode: "warning"
+      instructions: >
+        If changes touch packages/auth-spa or packages/ui-tokens public exports, require either:
+        (1) version bump + changelog note, or (2) PR description stating compatibility.
+
+tools:
+  # Keep it simple for a pnpm TS monorepo; enable more only if you actually run them in CI.
+  biome:
+    enabled: true
+  markdownlint:
+    enabled: true
+  github-checks:
+    enabled: true
+    timeout_ms: 90000
+  semgrep:
+    enabled: true
+
+chat:
+  auto_reply: true
