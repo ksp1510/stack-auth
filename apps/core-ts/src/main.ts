@@ -117,7 +117,7 @@ function renderLogin() {
   const root = document.querySelector<HTMLDivElement>("#app");
   if (!root) return;
 
-  root.innerHTML = baseCard("Angular (TS)", "Auth0 Universal Login · Google · No backend", `<a class="btn" href="http://localhost:3000/">Landing</a>`, "sm");
+  root.innerHTML = baseCard("Core (TS)", "Auth0 Universal Login · Google · No backend", `<a class="btn" href="http://localhost:3000/">Landing</a>`, "sm");
 
   const content = document.getElementById("content");
   if (!content) return;

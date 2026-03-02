@@ -16,5 +16,5 @@ const desc = params.get("error_description");
 
   await initAuthOnce();
   await auth.handleRedirectCallback();
-  window.location.replace("/");
+  window.location.replace("/home");
 })();

@@ -2,7 +2,13 @@
 import "../styles.css";
 ---
 
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Astro (TS)</title>
+  </head>
+
   <body>
     <main class="app">
       <section class="card">
@@ -16,28 +22,26 @@ import "../styles.css";
         </header>
 
         <div class="actions">
-          <button id="login" type="button" class="btn primary">Login</button>
-          <button id="logout" type="button" class="btn">Logout</button>
+          <button id="login" class="btn primary" type="button">Login</button>
+          <button id="signup" class="btn" type="button">Sign up</button>
         </div>
 
         <div class="divider"><span>or</span></div>
 
-        <button class="btn google" type="button" on:click={google}>
+        <button id="google" class="btn google" type="button">
           Continue with Google
         </button>
 
-        {#if notice}
-        <div class="status" style="margin-top:14px;">
-          <span>{notice}</span>
+        <div id="noticeWrap" class="status" hidden style="margin-top:14px;">
+          <span id="notice"></span>
         </div>
-      {/if}
 
-      <p class="hint">
-        Email/Password happens inside Auth0 Universal Login (DB connection). Your app never sees passwords.
-      </p>
+        <p class="hint">
+          Email/Password happens inside Auth0 Universal Login (DB connection). Your app never sees passwords.
+        </p>
       </section>
     </main>
 
-    <script type="module" src="/src/client/index.ts"></script>
+    <script type="module" src="/src/client/login.ts"></script>
   </body>
 </html>
